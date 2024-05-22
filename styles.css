@@ -2,4 +2,65 @@ body,
 html {
   padding: 0;
   margin: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+
+  background-color: hsl(185, 41%, 84%);
+}
+
+.logo {
+  margin: 10% auto;
+}
+
+main {
+  background-color: hsl(0, 0%, 100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: grid;
+}
+
+form,
+.totals {
+  width: 90%;
+  margin: 5% auto;
+}
+
+.bill-input,
+.number-of-people {
+  width: 100%;
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+}
+
+button,
+.totals {
+  border-radius: 5px;
+}
+
+.percentage-button,
+.totals {
+  background-color: hsl(183, 100%, 15%);
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.percentage-button {
+  box-sizing: content-box;
+}
+
+.percentage-button,
+.custom {
+  padding: 8px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

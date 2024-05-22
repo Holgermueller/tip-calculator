@@ -12,40 +12,60 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <form action="#">
-      <label for="bill">Bill</label>
-      <input type="number" name="bill" id="bill" />
+    <header>
+      <img class="logo" src="images/logo.svg" alt="App Logo" />
+    </header>
 
-      <p>Select Tip %</p>
+    <main>
+      <form action="#">
+        <label for="bill">Bill</label>
+        <input type="number" class="bill-input" name="bill" id="bill" />
 
-      <button>5%</button>
-      <button>10%</button>
-      <button>15%</button>
-      <button>25%</button>
-      <button>50%</button>
-      <button>Custom</button>
+        <p>Select Tip %</p>
 
-      <label for="number-of-people"></label>
-      <input type="number" name="number-of-people" id="numberOfPeople" />
+        <div class="button-container">
+          <button class="percentage-button" id="five">5%</button>
+          <button class="percentage-button" id="ten">10%</button>
+          <button class="percentage-button" id="fifteen">15%</button>
+          <button class="percentage-button" id="twentyFive">25%</button>
+          <button class="percentage-button" id="fifty">50%</button>
+          <input type="number" name="custom" id="custom" placeholder="Custom" />
+        </div>
 
-      Tip Amount / person Total / person
+        <label for="number-of-people">Number of People</label>
+        <input
+          type="number"
+          class="number-of-people"
+          name="number-of-people"
+          id="numberOfPeople"
+        />
+      </form>
 
-      <button>Reset</button>
-    </form>
+      <div class="totals">
+        <p>Tip Amount</p>
+        <p><small>/ person</small></p>
+        <div class="display">00</div>
+
+        <p>Total</p>
+        <p><small>/ person</small></p>
+
+        <div class="display">00</div>
+
+        <button>RESET</button>
+      </div>
+    </main>
 
     <footer class="attribution">
       <p>
