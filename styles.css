@@ -19,6 +19,10 @@ main {
   display: grid;
 }
 
+label {
+  color: hsl(184, 14%, 56%);
+}
+
 button {
   border: none;
 }
@@ -27,7 +31,6 @@ input {
   text-align: right;
   padding-right: 16px;
   border: none;
-  background-color: hsl(189, 41%, 97%);
 }
 
 form,
@@ -38,10 +41,12 @@ form,
 
 .bill-input {
   background: url("images/icon-dollar.svg") no-repeat scroll 7px center;
+  background-color: hsl(189, 41%, 97%);
 }
 
 .number-of-people {
   background: url("images/icon-person.svg") no-repeat scroll 7px center;
+  background-color: hsl(189, 41%, 97%);
 }
 
 .bill-input,
@@ -61,6 +66,7 @@ button,
 }
 
 .button-container {
+  margin: 5% auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -74,6 +80,18 @@ button,
 .percentage-button,
 .custom {
   padding: 8px;
+}
+
+.custom {
+  background-color: hsl(189, 41%, 97%);
+  font-weight: 700;
+}
+
+.reset {
+  display: block;
+  width: 90%;
+  padding: 8px;
+  margin: 5% auto;
 }
 
 .attribution {

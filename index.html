@@ -29,22 +29,32 @@
     </header>
 
     <main>
-      <form action="#">
+      <form action="#" method="post">
         <label for="bill">Bill</label>
         <input type="number" class="bill-input" name="bill" id="bill" />
 
-        <p>Select Tip %</p>
+        <label for="chooseTipPercentage">Select Tip %</label>
 
-        <div class="button-container">
+        <div
+          class="button-container"
+          id="chooseTipPercentage"
+          name="Choose tip percentage"
+        >
           <button class="percentage-button" id="five">5%</button>
           <button class="percentage-button" id="ten">10%</button>
           <button class="percentage-button" id="fifteen">15%</button>
           <button class="percentage-button" id="twentyFive">25%</button>
           <button class="percentage-button" id="fifty">50%</button>
-          <input type="number" name="custom" id="custom" placeholder="Custom" />
+          <input
+            type="number"
+            class="custom"
+            name="custom"
+            id="custom"
+            placeholder="Custom"
+          />
         </div>
 
-        <label for="number-of-people">Number of People</label>
+        <label for="numberOfPeople">Number of People</label>
         <input
           type="number"
           class="number-of-people"
@@ -68,7 +78,7 @@
           <div class="display">00</div>
         </div>
 
-        <button>RESET</button>
+        <button class="reset" id="reset" onclick="reset()">RESET</button>
       </div>
     </main>
 
