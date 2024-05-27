@@ -33,25 +33,45 @@
         <label for="bill">Bill</label>
         <input type="number" class="bill-input" name="bill" id="bill" />
 
-        <label for="chooseTipPercentage">Select Tip %</label>
+        <p class="tip-percentage-label" for="chooseTipPercentage">Select Tip %</p>
 
         <div
           class="button-container"
           id="chooseTipPercentage"
           name="Choose tip percentage"
         >
-          <button class="percentage-button" id="five">5%</button>
-          <button class="percentage-button" id="ten">10%</button>
-          <button class="percentage-button" id="fifteen">15%</button>
-          <button class="percentage-button" id="twentyFive">25%</button>
-          <button class="percentage-button" id="fifty">50%</button>
+        <div class="single-button-container">
+          <input type="radio" name="amount" id="five">
+          <label for="five">5%</label>
+        </div>
+        <div class="single-button-container">
+          <input type="radio" name="amount" id="ten">
+          <label for="ten">10%</label>
+        </div>
+        <div class="single-button-container">
+          <input type="radio" name="amount" id="fifteen">
+          <label for="fifteen"">15%</label>
+        </div>
+        <div class="single-button-container">
+          <input type="radio" name="amount" id="twentyFive">
+          <label for="twentyFive">25%</label>
+        </div>
+        <div class="single-button-container">
+          <input type="radio" name="amount" id="fifty">
+          <label for="fifty">50%</label>
+        </div>
+        <div class="single-button-container">
           <input
-            type="number"
-            class="custom"
-            name="custom"
-            id="custom"
-            placeholder="Custom"
-          />
+          type="number"
+          class="custom"
+          name="custom"
+          id="custom"
+          placeholder="Custom"
+        />
+        </div>
+
+          
+        
         </div>
 
         <label for="numberOfPeople">Number of People</label>

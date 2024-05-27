@@ -19,7 +19,8 @@ main {
   display: grid;
 }
 
-label {
+label,
+.tip-percentage-label {
   color: hsl(184, 14%, 56%);
 }
 
@@ -72,12 +73,23 @@ button,
   gap: 1rem;
 }
 
-.percentage-button {
-  box-sizing: content-box;
-  color: hsl(189, 41%, 97%);
+.button-container label,
+.button-container input {
+  position: absolute;
 }
 
-.percentage-button,
+input[type="radio"] {
+  box-sizing: content-box;
+  color: hsl(189, 41%, 97%);
+  opacity: 0;
+  text-align: center;
+}
+
+.single-button-container {
+  border-radius: 15px;
+}
+
+.single-button-container,
 .custom {
   padding: 8px;
 }
