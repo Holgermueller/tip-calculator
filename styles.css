@@ -61,7 +61,7 @@ button,
   border-radius: 5px;
 }
 
-.percentage-button,
+.percent-container,
 .totals {
   background-color: hsl(183, 100%, 15%);
 }
@@ -76,13 +76,19 @@ button,
 .button-container label,
 .button-container input {
   position: absolute;
+  display: block;
+}
+
+.button-container label {
+  padding: 5px;
+  border: 1px solid #ccc;
 }
 
 input[type="radio"] {
   box-sizing: content-box;
   color: hsl(189, 41%, 97%);
   opacity: 0;
-  text-align: center;
+  padding: auto;
 }
 
 .single-button-container {
