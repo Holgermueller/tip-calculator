@@ -73,26 +73,39 @@ button,
   gap: 1rem;
 }
 
-.button-container label,
-.button-container input {
+.single-button-container {
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+}
+
+.single-button-container label,
+.single-button-container input {
   position: absolute;
   display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.button-container label {
-  padding: 5px;
-  border: 1px solid #ccc;
+.single-button-container label {
+  cursor: pointer;
+  z-index: 90;
+  line-height: 2em;
+  text-align: center;
 }
 
-input[type="radio"] {
-  box-sizing: content-box;
-  color: hsl(189, 41%, 97%);
-  opacity: 0;
-  padding: auto;
+.single-button-container [type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
 }
 
-.single-button-container {
-  border-radius: 15px;
+.single-button-container input[type="radio"]:checked + label {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border-radius: 4px;
 }
 
 .single-button-container,
