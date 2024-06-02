@@ -54,6 +54,8 @@ form,
 .number-of-people {
   width: 100%;
   padding: 12px 12px 12px 30px;
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
 }
 
 button,
@@ -93,8 +95,9 @@ button,
 .single-button-container label {
   cursor: pointer;
   z-index: 90;
-  line-height: 2em;
+  line-height: 2.5em;
   text-align: center;
+  color: hsl(0, 0%, 100%);
 }
 
 .single-button-container [type="radio"] {
@@ -118,11 +121,42 @@ button,
   font-weight: 700;
 }
 
+.total-display {
+  margin: 10% 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-item {
+  grid-column: 1;
+}
+
+.total-display p {
+  margin: 0;
+}
+
+.display-name {
+  color: hsl(0, 0%, 100%);
+}
+
+.total-display small {
+  color: hsl(184, 14%, 56%);
+}
+
+.display {
+  color: hsl(172, 67%, 45%);
+  font-size: 2rem;
+  grid-column: 2;
+  justify-self: end;
+}
+
 .reset {
+  background-color: hsl(172, 67%, 45%);
   display: block;
   width: 90%;
   padding: 8px;
   margin: 5% auto;
+  font-weight: 700;
 }
 
 .attribution {
