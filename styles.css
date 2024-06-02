@@ -4,7 +4,6 @@ html {
   margin: 0;
   font-family: "Space Mono", monospace;
   font-weight: 700;
-
   background-color: hsl(185, 41%, 84%);
 }
 
@@ -145,7 +144,7 @@ button,
 
 .display {
   color: hsl(172, 67%, 45%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   grid-column: 2;
   justify-self: end;
 }
@@ -165,4 +164,28 @@ button,
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 600px) {
+  body,
+  html {
+    display: grid;
+    place-items: center;
+    align-content: center;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+
+    margin: auto;
+    border-radius: 15px;
+  }
+
+  form {
+    grid-column: 1;
+  }
+
+  .totals {
+    grid-column: 2;
+  }
 }
