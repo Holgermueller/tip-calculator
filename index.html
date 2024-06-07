@@ -31,7 +31,7 @@
     <main>
       <form action="#" method="post">
         <label for="bill">Bill</label>
-        <input type="number" class="bill-input" name="bill" id="bill" />
+        <input type="text" class="bill-input" name="bill" id="bill" />
 
         <p class="tip-percentage-label" for="chooseTipPercentage">Select Tip %</p>
 
@@ -62,7 +62,7 @@
         </div>
         <div class="single-button-container">
           <input
-          type="number"
+          type="text"
           class="custom"
           name="custom"
           id="custom"
@@ -76,7 +76,7 @@
 
         <label for="numberOfPeople">Number of People</label>
         <input
-          type="number"
+          type="text"
           class="number-of-people"
           name="number-of-people"
           id="numberOfPeople"
@@ -91,7 +91,7 @@
             <p><small>/ person</small></p>
           </div>
          
-          <div id="tipAmountDisplay" class="display">00</div>
+          <div id="tipAmountDisplay" class="display"></div>
         </div>
 
         <div class="total-display">
@@ -100,7 +100,7 @@
             <p><small>/ person</small></p>
           </div>
          
-          <div id="totalDisplay" class="display">00</div>
+          <div id="totalDisplay" class="display"></div>
         </div>
 
         <button class="reset" id="reset" onclick="reset()">RESET</button>
@@ -115,5 +115,7 @@
         >. Coded by <a href="https://holgermueller.github.io/portfolio/" target="_blank">Holger Mueller</a>.
       </p>
     </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
