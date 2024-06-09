@@ -1,35 +1,38 @@
 "use strict";
 
-const goodKey = "1234567890.";
-
 let tipPercentage = "";
 let tipPerPerson = "0.00";
 let totalPerPerson = "0.00";
 
-let enteredBill = document.getElementById("bill").value;
+let billInput = document.getElementById("bill").value;
 let numberOfPeople = document.getElementById("numberOfPeople").value;
 
-const sendTipPerPersonToDOM = (e) => {
-  if (enteredBill > 0) {
-    tipPerPerson = enteredBill.toString();
-  } else {
-    tipPerPerson = "0.00";
-  }
+//Get data from form
+const getBillValue = () => {};
 
-  document.getElementById("tipAmountDisplay").innerHTML = "$" + tipPerPerson;
-};
-
-const sendTotalPerPersonToDom = () => {
-  document.getElementById("totalDisplay").innerHTML = "$" + totalPerPerson;
-};
+const getNumberofPeople = () => {};
 
 const calculateTip = () => {
-  sendTipPerPersonToDOM();
-  sendTotalPerPersonToDom();
+  //Get bill
+  const billValue = billInput;
+  console.log(billValue);
 
-  console.log(enteredBill.parseInt());
+  //Get number of people
+
+  sendTipAmountToDOM();
+  sendTotalPerPersonToDOM();
 };
 
+//Send Data to DOM
+const sendTipAmountToDOM = () => {
+  document.getElementById("tipAmountDisplay").innerHTML = tipPerPerson;
+};
+
+const sendTotalPerPersonToDOM = () => {
+  document.getElementById("totalDisplay").innerHTML = totalPerPerson;
+};
+
+//Reset form
 const reset = () => {
   console.log("reset");
 };
