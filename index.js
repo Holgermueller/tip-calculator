@@ -1,14 +1,15 @@
 "use strict";
 
-let bill = "";
-let numberOfPeople = "";
+const goodKey = "1234567890.";
+
 let tipPercentage = "";
 let tipPerPerson = "0.00";
 let totalPerPerson = "0.00";
 
 let enteredBill = document.getElementById("bill").value;
+let numberOfPeople = document.getElementById("numberOfPeople").value;
 
-const sendTipPerPersonToDOM = () => {
+const sendTipPerPersonToDOM = (e) => {
   document.getElementById("tipAmountDisplay").innerHTML = "$" + tipPerPerson;
 };
 
@@ -20,6 +21,10 @@ const calculateTip = () => {
   console.log(enteredBill);
   sendTipPerPersonToDOM();
   sendTotalPerPersonToDom();
+};
+
+const reset = () => {
+  console.log("reset");
 };
 
 calculateTip();
