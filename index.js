@@ -10,6 +10,12 @@ let enteredBill = document.getElementById("bill").value;
 let numberOfPeople = document.getElementById("numberOfPeople").value;
 
 const sendTipPerPersonToDOM = (e) => {
+  if (enteredBill > 0) {
+    tipPerPerson = enteredBill.toString();
+  } else {
+    tipPerPerson = "0.00";
+  }
+
   document.getElementById("tipAmountDisplay").innerHTML = "$" + tipPerPerson;
 };
 
@@ -18,9 +24,10 @@ const sendTotalPerPersonToDom = () => {
 };
 
 const calculateTip = () => {
-  console.log(enteredBill);
   sendTipPerPersonToDOM();
   sendTotalPerPersonToDom();
+
+  console.log(enteredBill.parseInt());
 };
 
 const reset = () => {
