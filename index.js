@@ -1,6 +1,7 @@
 "use strict";
 
-let tipPercentage = "";
+let tip;
+let customTip;
 let tipPerPerson = (document.getElementById("tipAmountDisplay").innerHTML =
   "$0.00");
 let totalPerPerson = (document.getElementById("totalDisplay").innerHTML =
@@ -10,55 +11,60 @@ let billInput = document.getElementById("bill");
 let numberOfPeopleEntered = document.getElementById("numberOfPeople");
 
 const divideAmongstGroup = () => {
-  //Get bill
   let billValue = billInput.value;
-  console.log(billValue);
-
-  //add tip
-  //document.querySelector('input[name="genderS"]:checked').value;
 
   if (document.getElementById("five").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.05;
-    console.log(billValue);
-  }
-  if (document.getElementById("ten").checked) {
-    billValue = parseInt(billValue) + parseInt(billValue) * 0.1;
-    console.log(billValue);
-  }
-  if (document.getElementById("fifteen").checked) {
-    billValue = parseInt(billValue) + parseInt(billValue) * 0.15;
-    console.log(billValue);
-  }
-  if (document.getElementById("twentyFive").checked) {
-    billValue = parseInt(billValue) + parseInt(billValue) * 0.25;
-    console.log(billValue);
-  }
-  if (document.getElementById("fifty").checked) {
-    billValue = parseInt(billValue) + parseInt(billValue) * 0.5;
-    console.log(billValue);
+    tip = parseInt(billValue) * 0.05;
   }
 
-  //Get number of people
+  if (document.getElementById("ten").checked) {
+    billValue = parseInt(billValue) + parseInt(billValue) * 0.1;
+    tip = parseInt(billValue) * 0.1;
+  }
+
+  if (document.getElementById("fifteen").checked) {
+    billValue = parseInt(billValue) + parseInt(billValue) * 0.15;
+    tip = parseInt(billValue) * 0.15;
+  }
+
+  if (document.getElementById("twentyFive").checked) {
+    billValue = parseInt(billValue) + parseInt(billValue) * 0.25;
+    tip = parseInt(billValue) * 0.25;
+  }
+
+  if (document.getElementById("fifty").checked) {
+    billValue = parseInt(billValue) + parseInt(billValue) * 0.5;
+    tip = parseInt(billValue) * 0.5;
+  }
+
+  //Allow for custom tip
+
+  if (document.getElementById("custom") != "") {
+    let elements = document.getElementsByTagName("input");
+
+    for (let i = 0; i < elements.length; i++) {
+      if (elements[i].type == "radio") {
+        elements[i].checked = false;
+      }
+    }
+  }
+
   let numberOfPeople = numberOfPeopleEntered.value;
 
   let totPerPerson = billValue / numberOfPeople;
 
-  //Send Data to DOM
-  let tipPerPerson = (document.getElementById("tipAmountDisplay").innerHTML =
-    "$0.00");
+  let tipEach = tip / numberOfPeople;
 
-  let totalPerPerson = (document.getElementById("totalDisplay").innerHTML =
-    "$" + totPerPerson.toFixed(2));
+  document.getElementById("tipAmountDisplay").innerHTML =
+    "$" + tipEach.toFixed(2);
+
+  document.getElementById("totalDisplay").innerHTML =
+    "$" + totPerPerson.toFixed(2);
 };
 
-//Reset form
 const reset = () => {
   document.getElementById("form").reset();
-
-  // let radio = document.getElementsByName("amount");
-
-  // for (let i = 0; radio.length; i++)
-  //   if (radio[i].checked == true) {
-  //     radio[i].checked = false;
-  //   }
+  document.getElementById("tipAmountDisplay").innerHTML = "$0.00";
+  document.getElementById("totalDisplay").innerHTML = "0.00";
 };
