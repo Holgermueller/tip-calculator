@@ -1,44 +1,38 @@
 "use strict";
 
 let tipPercentage = "";
-let tipPerPerson = "0.00";
-let totalPerPerson = "0.00";
+let tipPerPerson = (document.getElementById("tipAmountDisplay").innerHTML =
+  "$0.00");
+let totalPerPerson = (document.getElementById("totalDisplay").innerHTML =
+  "$0.00");
 
 let billInput = document.getElementById("bill");
 let numberOfPeopleEntered = document.getElementById("numberOfPeople");
-
-//Get data from form
-const getBillValue = () => {
-  let billValue = billInput.value;
-
-  return billValue;
-};
 
 const divideAmongstGroup = () => {
   //Get bill
   const billValue = billInput.value;
   console.log(billValue);
 
+  //add tip
+  //document.querySelector('input[name="genderS"]:checked').value;
+  if (document.getElementById("input[name='name']:checked").value == true) {
+    console.log("checked 5");
+  }
+
   //Get number of people
 
   let numberOfPeople = numberOfPeopleEntered.value;
   console.log(numberOfPeople);
 
-  sendTipAmountToDOM(billValue);
-  sendTotalPerPersonToDOM();
-};
+  let totPerPerson = billValue / numberOfPeople;
 
-//Send Data to DOM
-const sendTipAmountToDOM = (billValue) => {
-  if (billValue <= 0) {
-    document.getElementById("tipAmountDisplay").innerHTML = "0.00";
-  } else {
-    document.getElementById("tipAmountDisplay").innerHTML = billValue;
-  }
-};
+  //Send Data to DOM
+  let tipPerPerson = (document.getElementById("tipAmountDisplay").innerHTML =
+    "$0.00");
 
-const sendTotalPerPersonToDOM = () => {
-  document.getElementById("totalDisplay").innerHTML = totalPerPerson;
+  let totalPerPerson = (document.getElementById("totalDisplay").innerHTML =
+    "$" + totPerPerson);
 };
 
 //Reset form
