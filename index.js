@@ -60,6 +60,11 @@ const divideAmongstGroup = () => {
     "$" + totPerPerson.toFixed(2);
 };
 
+const uncheckRadioButtons = () => {
+  let ele = document.getElementsByName("amount");
+  for (let i = 0; i < ele.length; i++) ele[i].checked = false;
+};
+
 const reset = () => {
   document.getElementById("form").reset();
   document.getElementById("tipAmountDisplay").innerHTML = "$0.00";
