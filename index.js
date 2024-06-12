@@ -41,13 +41,10 @@ const divideAmongstGroup = () => {
   //Allow for custom tip
 
   if (document.getElementById("custom") != "") {
-    let elements = document.getElementsByTagName("input");
+    let customTip = document.getElementById("custom");
+    billValue = parseInt(billValue) + parseInt(customTip.value);
 
-    for (let i = 0; i < elements.length; i++) {
-      if (elements[i].type == "radio") {
-        elements[i].checked = false;
-      }
-    }
+    tip = parseInt(customTip.value);
   }
 
   let numberOfPeople = numberOfPeopleEntered.value;
