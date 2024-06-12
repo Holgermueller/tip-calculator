@@ -25,55 +25,59 @@
   </head>
   <body>
     <header>
+      <h1>Splitter</h1>
       <img class="logo" src="images/logo.svg" alt="App Logo" />
     </header>
 
     <main>
       <form action="#" method="post" id="form">
         <label for="bill">Bill</label>
-        <input type="text" class="bill-input" name="bill" id="bill" placeholder="0"  />
-
-        <p class="tip-percentage-label" for="chooseTipPercentage">Select Tip %</p>
-
-        <div
-          class="button-container"
-          id="chooseTipPercentage"
-          name="Choose tip percentage"
-        >
-        <div class="single-button-container percent-container">
-          <input type="radio" name="amount" id="five" value="5">
-          <label  for="five">5%</label>
-        </div>
-        <div class="single-button-container percent-container">
-          <input type="radio" name="amount" id="ten" value="10">
-          <label for="ten">10%</label>
-        </div>
-        <div class="single-button-container percent-container">
-          <input type="radio" name="amount" id="fifteen" value="15">
-          <label for="fifteen"">15%</label>
-        </div>
-        <div class="single-button-container percent-container">
-          <input type="radio" name="amount" id="twentyFive" value="25">
-          <label for="twentyFive">25%</label>
-        </div>
-        <div class="single-button-container percent-container">
-          <input type="radio" name="amount" id="fifty" value="50">
-          <label for="fifty">50%</label>
-        </div>
-        <div class="single-button-container">
-          <input
+        <p class="error" id="billError">Can't be zero</p>
+        <input
           type="text"
-          class="custom"
-          name="custom"
-          id="custom"
-          placeholder="Custom"
-          onblur="uncheckRadioButtons()"
+          class="bill-input"
+          name="bill"
+          id="bill"
+          placeholder="0"
         />
-        </div>
-          
+
+        <p class="tip-percentage-label">Select Tip %</p>
+
+        <div class="button-container" id="chooseTipPercentage">
+          <div class="single-button-container percent-container">
+            <input type="radio" name="amount" id="five" value="5" />
+            <label for="five">5%</label>
+          </div>
+          <div class="single-button-container percent-container">
+            <input type="radio" name="amount" id="ten" value="10" />
+            <label for="ten">10%</label>
+          </div>
+          <div class="single-button-container percent-container">
+            <input type="radio" name="amount" id="fifteen" value="15" />
+            <label for="fifteen">15%</label>
+          </div>
+          <div class="single-button-container percent-container">
+            <input type="radio" name="amount" id="twentyFive" value="25" />
+            <label for="twentyFive">25%</label>
+          </div>
+          <div class="single-button-container percent-container">
+            <input type="radio" name="amount" id="fifty" value="50" />
+            <label for="fifty">50%</label>
+          </div>
+          <div class="single-button-container">
+            <input
+              type="text"
+              class="custom"
+              name="custom"
+              id="custom"
+              placeholder="Custom"
+              onblur="uncheckRadioButtons()"
+            />
+          </div>
         </div>
 
         <label for="numberOfPeople">Number of People</label>
+        <p class="error" id="numberOfPeopleError">Can't be zero</p>
         <input
           type="text"
           class="number-of-people"
@@ -86,12 +90,11 @@
 
       <div class="totals">
         <div class="total-display">
-
           <div class="grid-item">
             <p class="display-name">Tip Amount</p>
             <p><small>/ person</small></p>
           </div>
-         
+
           <div id="tipAmountDisplay" class="display"></div>
         </div>
 
@@ -100,7 +103,7 @@
             <p class="display-name">Total</p>
             <p><small>/ person</small></p>
           </div>
-         
+
           <div id="totalDisplay" class="display"></div>
         </div>
 
@@ -113,7 +116,10 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="https://holgermueller.github.io/portfolio/" target="_blank">Holger Mueller</a>.
+        >. Coded by
+        <a href="https://holgermueller.github.io/portfolio/" target="_blank"
+          >Holger Mueller</a
+        >.
       </p>
     </footer>
 

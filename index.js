@@ -13,6 +13,13 @@ let numberOfPeopleEntered = document.getElementById("numberOfPeople");
 const divideAmongstGroup = () => {
   let billValue = billInput.value;
 
+  if (document.getElementById("custom") != 0) {
+    let customTip = document.getElementById("custom");
+    billValue = parseInt(billValue) + parseInt(customTip.value);
+
+    tip = parseInt(customTip.value);
+  }
+
   if (document.getElementById("five").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.05;
     tip = parseInt(billValue) * 0.05;
@@ -38,26 +45,17 @@ const divideAmongstGroup = () => {
     tip = parseInt(billValue) * 0.5;
   }
 
-  //Allow for custom tip
-
-  if (document.getElementById("custom") != "") {
-    let customTip = document.getElementById("custom");
-    billValue = parseInt(billValue) + parseInt(customTip.value);
-
-    tip = parseInt(customTip.value);
-  }
-
   let numberOfPeople = numberOfPeopleEntered.value;
 
-  let totPerPerson = billValue / numberOfPeople;
+  let totPerPerson = parseInt(billValue) / parseInt(numberOfPeople);
 
-  let tipEach = tip / numberOfPeople;
+  let tipEach = parseInt(tip) / parseInt(numberOfPeople);
 
   document.getElementById("tipAmountDisplay").innerHTML =
-    "$" + tipEach.toFixed(2);
+    "$" + Math.ceil(tipEach.toFixed(2));
 
   document.getElementById("totalDisplay").innerHTML =
-    "$" + totPerPerson.toFixed(2);
+    "$" + Math.ceil(totPerPerson.toFixed(2));
 };
 
 const uncheckRadioButtons = () => {
@@ -69,4 +67,6 @@ const reset = () => {
   document.getElementById("form").reset();
   document.getElementById("tipAmountDisplay").innerHTML = "$0.00";
   document.getElementById("totalDisplay").innerHTML = "0.00";
+  document.getElementById("numberOfPeopleError").style.display = "none";
+  document.getElementById("billError").style.display = "none";
 };
