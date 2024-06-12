@@ -48,12 +48,12 @@ form,
 }
 
 .bill-input {
-  background: url("images/icon-dollar.svg") no-repeat scroll 7px center;
+  background: url("../../images/icon-dollar.svg") no-repeat scroll 7px center;
   background-color: hsl(189, 41%, 97%);
 }
 
 .number-of-people {
-  background: url("images/icon-person.svg") no-repeat scroll 7px center;
+  background: url("../../images/icon-person.svg") no-repeat scroll 7px center;
   background-color: hsl(189, 41%, 97%);
 }
 
