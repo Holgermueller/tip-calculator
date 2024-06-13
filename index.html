@@ -39,6 +39,7 @@
           name="bill"
           id="bill"
           placeholder="0"
+          onblur="checkIfBillValid()"
           required
         />
 
@@ -85,6 +86,7 @@
           id="numberOfPeople"
           placeholder="0"
           onchange="divideAmongstGroup()"
+          onblur="checkGroupValid()"
           required
         />
       </form>

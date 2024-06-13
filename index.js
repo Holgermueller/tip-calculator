@@ -1,7 +1,6 @@
 "use strict";
 
-let tip;
-let customTip;
+let tip, customTip;
 let tipPerPerson = (document.getElementById("tipAmountDisplay").innerHTML =
   "$0.00");
 let totalPerPerson = (document.getElementById("totalDisplay").innerHTML =
@@ -49,6 +48,26 @@ const divideAmongstGroup = () => {
     "$" + Math.ceil(totPerPerson.toFixed(2));
 };
 
+const checkIfBillValid = () => {
+  if (billInput.value == "") {
+    document.getElementById("billError").style.display = "block";
+    document.getElementById("bill").style.borderRadius = "5px";
+    document.getElementById("bill").style.borderWidth = "2px";
+    document.getElementById("bill").style.borderStyle = "solid";
+    document.getElementById("bill").style.borderColor = "red";
+  }
+};
+
+const checkGroupValid = () => {
+  if (numberOfPeopleEntered.value == "") {
+    document.getElementById("numberOfPeopleError").style.display = "block";
+    document.getElementById("numberOfPeople").style.borderRadius = "5px";
+    document.getElementById("numberOfPeople").style.borderWidth = "2px";
+    document.getElementById("numberOfPeople").style.borderStyle = "solid";
+    document.getElementById("numberOfPeople").style.borderColor = "red";
+  }
+};
+
 const uncheckRadioButtons = () => {
   let ele = document.getElementsByName("amount");
   for (let i = 0; i < ele.length; i++) ele[i].checked = false;
@@ -57,7 +76,9 @@ const uncheckRadioButtons = () => {
 const reset = () => {
   document.getElementById("form").reset();
   document.getElementById("tipAmountDisplay").innerHTML = "$0.00";
-  document.getElementById("totalDisplay").innerHTML = "0.00";
+  document.getElementById("totalDisplay").innerHTML = "$0.00";
   document.getElementById("numberOfPeopleError").style.display = "none";
   document.getElementById("billError").style.display = "none";
+  document.getElementById("numberOfPeople").style.border = "none";
+  document.getElementById("bill").style.border = "none";
 };
