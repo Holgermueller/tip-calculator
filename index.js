@@ -13,36 +13,27 @@ let numberOfPeopleEntered = document.getElementById("numberOfPeople");
 const divideAmongstGroup = () => {
   let billValue = billInput.value;
 
-  if (document.getElementById("custom") != 0) {
-    let customTip = document.getElementById("custom");
-    billValue = parseInt(billValue) + parseInt(customTip.value);
-
-    tip = parseInt(customTip.value);
-  }
-
   if (document.getElementById("five").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.05;
     tip = parseInt(billValue) * 0.05;
-  }
-
-  if (document.getElementById("ten").checked) {
+  } else if (document.getElementById("ten").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.1;
     tip = parseInt(billValue) * 0.1;
-  }
-
-  if (document.getElementById("fifteen").checked) {
+  } else if (document.getElementById("fifteen").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.15;
     tip = parseInt(billValue) * 0.15;
-  }
-
-  if (document.getElementById("twentyFive").checked) {
+  } else if (document.getElementById("twentyFive").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.25;
     tip = parseInt(billValue) * 0.25;
-  }
-
-  if (document.getElementById("fifty").checked) {
+  } else if (document.getElementById("fifty").checked) {
     billValue = parseInt(billValue) + parseInt(billValue) * 0.5;
     tip = parseInt(billValue) * 0.5;
+  } else {
+    let customTip = document.getElementById("custom");
+    billValue = parseInt(billValue) + parseInt(customTip.value);
+    console.log(billValue);
+
+    tip = parseInt(customTip.value);
   }
 
   let numberOfPeople = numberOfPeopleEntered.value;

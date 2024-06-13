@@ -55,6 +55,10 @@ input:focus {
   border-radius: 5px;
 }
 
+input[type="text"]:invalid {
+  border-color: red;
+}
+
 form,
 .totals {
   width: 90%;
